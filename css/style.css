@@ -1,13 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: #F3F5FC;
+}
+
 .container {
     display: flex;
 }
 
-#texto-entrada {
+#left-side {
+    display: flex;
+    flex-direction: column;
+}
 
+#logo-alura {
+    width: 4rem;
+    height: 2rem;
+}
+
+#texto-entrada {
+    background-color: #F3F5FC;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #0A3871;
+    resize: none;
+    border: none;
+}
+
+#label-texto-entrada {
+    color: #495057;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 0.7rem;
+}
+
+.boton-style {
+    font-family: Inter;
+    font-weight: 400;
+}
+
+#boton-encriptar {
+    background-color: #0A3871;
+    color: white;
+}
+
+#boton-desencriptar {
+    background-color: #D8DFE8;
+    color: #0A3871;
 }

@@ -10,10 +10,16 @@
     <header></header>
     <main class="container">
         <div id="left-side">
+            <img id="logo-alura" src="img/logo-alura.png" alt="Logo letra A de Alura">
             <textarea name="texto-entrada" id="texto-entrada" rows="15" cols="50">Ingrese el texto aquí</textarea>
-            <br>
-            <button>Enciptar</button>
-            <button>Desencriptar</button>
+            <label id="label-texto-entrada" for="texto-entrada">
+                <i class="fa-solid fa-circle-info"></i>
+                Solo letras minúsculas y sin acentos.
+            </label>
+            <div>
+                <button class="boton-style" id="boton-encriptar">Encriptar</button>
+                <button class="boton-style" id="boton-desencriptar">Desencriptar</button>
+            </div>
         </div>
         <p id="right-side">holis</p>
     </main>
