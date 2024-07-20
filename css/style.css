@@ -113,6 +113,11 @@ body {
   margin-bottom: 1rem;
 }
 
+#texto-resultado {
+  width: 90%;
+  word-break: break-all;
+}
+
 #boton-copiar {
   background-color: #ffffff;
   color: #0a3871;

@@ -1,4 +1,40 @@
-/* --------------------------- CÓDIGO DEL TEXTAREA ------------------------------*/
+/*-----------------  CODIGO PRINCIPAL ----------------------------------------------*/
+
+function formatearRightSide() {
+  document.getElementById("subtitulo-resultado").style.display = "none";
+  document.getElementById("texto-resultado").style.textAlign = 'start';
+}
+
+function mostrarResultado() {
+  formatearRightSide();
+
+  let texto_entrada = document.getElementById("texto-entrada").value;
+
+  document.getElementById("texto-resultado").innerText = texto_entrada;
+}
+
+function encriptarTexto() {
+  
+}
+
+document.getElementById('boton-encriptar').addEventListener('click', () => {
+  mostrarResultado();
+});
+
+/*document.getElementById('boton-desencriptar').addEventListener('click', () => {});
+
+document.getElementById('boton-copiar').addEventListener('click', () => {});*/
+
+
+
+
+
+
+
+
+
+
+/* --------------------------- CÓDIGO PROPIO DEL TEXTAREA ------------------------------*/
 const textarea = document.getElementById("texto-entrada");
 const placeHolder = "Ingrese el texto aquí";
 
