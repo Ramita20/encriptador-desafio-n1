@@ -23,9 +23,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px 0 0 50px;
-    width: 65vw;
-    height: 90vh;
 }
 
 #logo-alura {
@@ -35,12 +32,18 @@ body {
 }
 
 #texto-entrada {
-    margin: 50px 0 0 0;
     background-color: #F3F5FC;
+    font-family: inherit;
     font-size: 1.5rem;
     color: #0A3871;
+    padding: 0 5px;
     resize: none;
     border: none;
+}
+
+#texto-entrada:focus {
+    outline: 1px solid #0A3871;
+    border-radius: 5px;
 }
 
 #label-texto-entrada {
@@ -66,11 +69,6 @@ body {
     align-items: center;
     justify-content: space-between;
     background-color: #FFFFFF;
-    font-size: 1.5rem;
-    padding: 2rem;
-    width: 35vw;
-    height: 90vh;
-    margin: 2rem 2rem 0 0;
     border-radius: 1rem;
     box-shadow: 0 10px 32px -20px black;
 }
@@ -84,6 +82,18 @@ body {
     .container {
         flex-direction: column;
         align-items: center;
+    }
+
+    #left-side {
+        width: 100vw;
+    }
+
+    #logo-alura {
+        margin: 0.8125rem 0 0 0;
+    }
+
+    #texto-entrada {
+        width: 97%;
     }
 }
 
@@ -106,12 +116,18 @@ body {
 
 /* ESTILOS PARA COMPUTADORAS -------------------------------------------------------------------*/
 
-/* PANTALLAS PEQUEÑAS */
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
-
-}
-
-/* PANTALLAS GRANDES */
 @media only screen and (min-width: 1201px) {
+    #left-side {
+        margin: 20px 0 0 50px;
+        width: 65vw;
+        height: 90vh;
+    }
 
+    #right-side {
+        font-size: 1.5rem;
+        padding: 2rem;
+        width: 35vw;
+        height: 90vh;
+        margin: 2rem 2rem 0 0;
+    }
 }
