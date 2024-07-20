@@ -26,10 +26,13 @@ body {
   align-items: center;
 }
 
+#titulo-principal {
+  align-self: self-start;
+}
+
 #logo-alura {
   width: 4.5rem;
   height: 1.8rem;
-  align-self: self-start;
 }
 
 #texto-entrada {
@@ -37,7 +40,7 @@ body {
   font-family: inherit;
   font-size: 1.4rem;
   color: #0a3871;
-  padding: 0 5px;
+  padding: 5px;
   resize: none;
   overflow: hidden;
   border: none;
@@ -71,10 +74,17 @@ body {
   font-size: 1rem;
 }
 
+.boton-style:active {
+  background-color: #3b8cde !important;
+  color: #333333 !important;
+  border: 1px solid #3b8cde !important;
+}
+
 #boton-encriptar {
   background-color: #0a3871;
   color: white;
-  padding: 1.25rem 0;
+  border: 1px solid #0a3871;
+  padding: 1.1875rem 0;
 }
 
 #boton-desencriptar {
@@ -91,11 +101,23 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
   font-size: 1.4rem;
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 1rem;
   box-shadow: 0 10px 32px -20px black;
+}
+
+#subtitulo-resultado {
+  margin-bottom: 1rem;
+}
+
+#boton-copiar {
+  background-color: #ffffff;
+  color: #0a3871;
+  border: 1px solid #0a3871;
+  padding: 1.1875rem 0;
 }
 
 /*------------------------------------- MEDIAS QUERIES ----------------------------------------*/
@@ -113,7 +135,7 @@ body {
     width: 100vw;
   }
 
-  #logo-alura {
+  #titulo-principal {
     margin: 0.8125rem 0 0 0;
   }
 
@@ -125,6 +147,7 @@ body {
   #label-texto-entrada {
     margin: 8px 0 0 0;
     align-self: self-start;
+    margin-left: 0.5rem;
   }
 
   #botones-left-side {
@@ -143,7 +166,11 @@ body {
 
   #right-side {
     width: 90%;
-    margin-top: 3.75rem;
+    margin: 3.75rem 0 1rem 0;
+  }
+
+  #boton-copiar {
+    margin-top: 2.5rem;
   }
 }
 
