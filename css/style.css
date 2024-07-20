@@ -1,76 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #F3F5FC;
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 16px;
+  background-color: #f3f5fc;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  width: 100vw;
 }
 
 .container {
-    display: flex;
+  display: flex;
 }
 
 /* Estilos del lado izquierdo. -------------------------------------------------------------*/
 
 #left-side {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #logo-alura {
-    width: 4.5rem;
-    height: 2rem;
-    align-self: self-start;
+  width: 4.5rem;
+  height: 1.8rem;
+  align-self: self-start;
 }
 
 #texto-entrada {
-    background-color: #F3F5FC;
-    font-family: inherit;
-    font-size: 1.5rem;
-    color: #0A3871;
-    padding: 0 5px;
-    resize: none;
-    border: none;
+  background-color: #f3f5fc;
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: #0a3871;
+  padding: 0 5px;
+  resize: none;
+  overflow: hidden;
+  border: none;
+  min-height: 12.625rem;
 }
 
 #texto-entrada:focus {
-    outline: 1px solid #0A3871;
-    border-radius: 5px;
+  outline: 1px solid #0a3871;
+  border-radius: 5px;
 }
 
 #label-texto-entrada {
-    color: #495057;
-    font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  color: #495057;
+  font-size: 0.875rem;
+}
+
+.material-symbols-outlined {
+  margin: 0 0.125rem 0 0;
+}
+
+#botones-left-side {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.boton-style {
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
 }
 
 #boton-encriptar {
-    background-color: #0A3871;
-    color: white;
+  background-color: #0a3871;
+  color: white;
+  padding: 1.25rem 0;
 }
 
 #boton-desencriptar {
-    background-color: #D8DFE8;
-    color: #0A3871;
+  background-color: #d8dfe8;
+  color: #0a3871;
+  border: 1px solid #0a3871;
+  padding: 1.1875rem 0;
 }
 
 /* Estilos del lado derecho. ----------------------------------------------------------------*/
 
 #right-side {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #FFFFFF;
-    border-radius: 1rem;
-    box-shadow: 0 10px 32px -20px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 32px -20px black;
 }
 
 /*------------------------------------- MEDIAS QUERIES ----------------------------------------*/
@@ -79,55 +104,75 @@ body {
 
 /* RETRATO */
 @media only screen and (max-width: 480px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    #left-side {
-        width: 100vw;
-    }
+  #left-side {
+    width: 100vw;
+  }
 
-    #logo-alura {
-        margin: 0.8125rem 0 0 0;
-    }
+  #logo-alura {
+    margin: 0.8125rem 0 0 0;
+  }
 
-    #texto-entrada {
-        width: 97%;
-    }
+  #texto-entrada {
+    width: 97%;
+    margin: 3.75rem 0 0 0;
+  }
+
+  #label-texto-entrada {
+    margin: 8px 0 0 0;
+    align-self: self-start;
+  }
+
+  #botones-left-side {
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+
+  .boton-style {
+    width: 90%;
+  }
+
+  #boton-desencriptar {
+    margin-top: 1.25rem;
+  }
+
+  #right-side {
+    width: 90%;
+    margin-top: 3.75rem;
+  }
 }
 
 /* PAISAJE */
 @media only screen and (min-width: 481px) and (max-width: 767px) {
-
 }
 
 /* ESTILOS PARA TABLETS -----------------------------------------------------------------------*/
 
 /* RETRATO */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-
 }
 
 /* PAISAJE */
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-
 }
 
 /* ESTILOS PARA COMPUTADORAS -------------------------------------------------------------------*/
 
 @media only screen and (min-width: 1201px) {
-    #left-side {
-        margin: 20px 0 0 50px;
-        width: 65vw;
-        height: 90vh;
-    }
+  #left-side {
+    margin: 20px 0 0 50px;
+    width: 65vw;
+    height: 90vh;
+  }
 
-    #right-side {
-        font-size: 1.5rem;
-        padding: 2rem;
-        width: 35vw;
-        height: 90vh;
-        margin: 2rem 2rem 0 0;
-    }
+  #right-side {
+    width: 35vw;
+    height: 90vh;
+    margin: 2rem 2rem 0 0;
+  }
 }
