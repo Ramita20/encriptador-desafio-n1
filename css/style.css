@@ -35,6 +35,12 @@ body {
   height: 1.8rem;
 }
 
+#alerta-error {
+  color: #d70000;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
 #texto-entrada {
   background-color: #f3f5fc;
   font-family: inherit;
@@ -114,8 +120,7 @@ body {
 }
 
 #texto-resultado {
-  width: 90%;
-  word-break: break-all;
+  width: 100%;
 }
 
 #boton-copiar {
@@ -123,6 +128,29 @@ body {
   color: #0a3871;
   border: 1px solid #0a3871;
   padding: 1.1875rem 0;
+}
+
+/* Parpadeo para el mensaje de alerta */
+.parpadeo {
+  animation: parpadeo 1s infinite alternate;
+}
+
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*------------------------------------- MEDIAS QUERIES ----------------------------------------*/
@@ -141,16 +169,20 @@ body {
   }
 
   #titulo-principal {
-    margin: 0.8125rem 0 0 0;
+    margin-top: 0.8125rem;
+  }
+
+  #alerta-error {
+    margin: 3.75rem 0 0.5rem 0.5rem;
+    align-self: self-start;
   }
 
   #texto-entrada {
     width: 97%;
-    margin: 3.75rem 0 0 0;
   }
 
   #label-texto-entrada {
-    margin: 8px 0 0 0;
+    margin-top: 8px;
     align-self: self-start;
     margin-left: 0.5rem;
   }
