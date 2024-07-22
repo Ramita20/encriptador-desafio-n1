@@ -14,6 +14,20 @@ body {
   width: 100vw;
 }
 
+.alerta-flotante {
+  text-align: center;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 5px;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
 .container {
   display: flex;
 }
@@ -33,12 +47,6 @@ body {
 #logo-alura {
   width: 4.5rem;
   height: 1.8rem;
-}
-
-#alerta-error {
-  color: #d70000;
-  font-size: 0.875rem;
-  font-weight: 500;
 }
 
 #texto-entrada {
@@ -130,29 +138,6 @@ body {
   padding: 1.1875rem 0;
 }
 
-/* Parpadeo para el mensaje de alerta */
-.parpadeo {
-  animation: parpadeo 1s infinite alternate;
-}
-
-@keyframes parpadeo {
-  0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 /*------------------------------------- MEDIAS QUERIES ----------------------------------------*/
 
 /* ESTILOS PARA CELULARES --------------------------------------------------------------------*/
@@ -172,13 +157,9 @@ body {
     margin-top: 0.8125rem;
   }
 
-  #alerta-error {
-    margin: 3.75rem 0 0.5rem 0.5rem;
-    align-self: self-start;
-  }
-
   #texto-entrada {
     width: 97%;
+    margin-top: 3.75rem;
   }
 
   #label-texto-entrada {
