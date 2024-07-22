@@ -13,10 +13,10 @@ function formateadoRightSide() {
     boton_copiar.textContent = "Copiar";
     boton_copiar.classList.add("boton-style");
     boton_copiar.id = "boton-copiar";
-    
-    boton_copiar.addEventListener('click', () => {
+
+    boton_copiar.addEventListener("click", () => {
       copiarTextoPortapapeles();
-    })
+    });
 
     document.getElementById("right-side").appendChild(boton_copiar);
 
@@ -27,31 +27,36 @@ function formateadoRightSide() {
 // Muestra el texto pasado por parametros en el parrafo del RightSide.
 function mostrarResultado(texto) {
   formateadoRightSide();
-  
+
   document.getElementById("texto-resultado").innerText = texto;
 }
 
-// Actualiza la alerta con el mensaje pasado por parametros.
-function mostrarAlerta(mensaje){
-  const alerta = document.getElementById("alerta-error");
-
+// Muestra una alerta flotante en el centro indicando un
+// mensaje en el tiempo pasado por parametros.
+function mostrarAlertaFlotante(mensaje, duracion) {
+  const alerta = document.createElement("div");
   alerta.textContent = mensaje;
-  if(mensaje === ''){
-    return;
-  }
-  alerta.classList.add("parpadeo");
+  alerta.classList.add("alerta-flotante");
+  document.body.appendChild(alerta);
 
-  setTimeout( () => {
-    alerta.classList.remove("parpadeo");
-  }, 2000);
+  setTimeout(() => {
+    alerta.style.opacity = 1;
+  }, 10);
+
+  setTimeout(() => {
+    alerta.style.opacity = 0;
+    setTimeout(() => {
+      document.body.removeChild(alerta);
+    }, 500);
+  }, duracion);
 }
 
-function traerTextoEntrada(){
+function traerTextoEntrada() {
   const textarea = document.getElementById("texto-entrada");
   let texto_entrada = textarea.value;
-  if(texto_entrada === 'Ingrese el texto aquí' || texto_entrada === ''){
-    mostrarAlerta("Debe rellenar el campo con algún mensaje.");
-    return '';
+  if (texto_entrada === "Ingrese el texto aquí" || texto_entrada === "") {
+    mostrarAlertaFlotante("Debe rellenar el campo con algún mensaje.", 2500);
+    return "";
   }
   textarea.value = "Ingrese el texto aquí";
   return texto_entrada;
@@ -60,7 +65,7 @@ function traerTextoEntrada(){
 // Encripta el texto ingresado en el textarea.
 function encriptarTexto() {
   let texto_entrada = traerTextoEntrada();
-  if(texto_entrada === ''){
+  if (texto_entrada === "") {
     return;
   }
 
@@ -73,13 +78,16 @@ function encriptarTexto() {
   };
   let palabra = "";
   let resultado = "";
-  
+
   for (const caract of texto_entrada) {
-    if((caract >= 'a' && caract <= 'z') || caract === ' '){
+    if ((caract >= "a" && caract <= "z") || caract === " ") {
       palabra = reemplazos[caract] || caract;
       resultado += palabra;
     } else {
-      mostrarAlerta("No se aceptan letras mayúsculas o caracteres especiales.");
+      mostrarAlertaFlotante(
+        "No se aceptan letras mayúsculas o caracteres especiales.",
+        2500
+      );
       return;
     }
   }
@@ -89,10 +97,22 @@ function encriptarTexto() {
 // Desencripta el texto ingresado en el textarea.
 function desencriptarTexto() {
   let texto_entrada = traerTextoEntrada();
-  if(texto_entrada === ''){
+  if (texto_entrada === "") {
     return;
   }
   let resultado = "";
+
+  for (const caract of texto_entrada) {
+    if ((caract >= "a" && caract <= "z") || caract === " ") {
+      continue;
+    } else {
+      mostrarAlertaFlotante(
+        "No se aceptan letras mayúsculas o caracteres especiales.",
+        2500
+      );
+      return;
+    }
+  }
 
   resultado = texto_entrada.replace(/ai/g, "a");
   resultado = resultado.replace(/enter/g, "e");
@@ -104,26 +124,22 @@ function desencriptarTexto() {
 }
 
 function copiarTextoPortapapeles() {
-  let parrafo = document.getElementById("texto-resultado");
-
-  let rango = document.createRange();
-  rango.selectNode(parrafo);
-
-  window.getSelection().removeAllRanges();
-  window.getSelection().addRange(rango);
-
-  document.execCommand("copy");
-
-  window.getSelection().removeAllRanges();
+  const texto = document.getElementById("texto-resultado").textContent;
+  navigator.clipboard
+    .writeText(texto)
+    .then(() => {
+      mostrarAlertaFlotante("Copiado", 1500);
+    })
+    .catch((error) => {
+      console.error("Error al copiar el texto: ", error);
+    });
 }
 
 document.getElementById("boton-encriptar").addEventListener("click", () => {
-  mostrarAlerta('');
   encriptarTexto();
 });
 
-document.getElementById('boton-desencriptar').addEventListener('click', () => {
-  mostrarAlerta('');
+document.getElementById("boton-desencriptar").addEventListener("click", () => {
   desencriptarTexto();
 });
 
