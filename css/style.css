@@ -17,10 +17,9 @@ body {
 .alerta-flotante {
   text-align: center;
   position: fixed;
-  top: 10px;
-  left: 50%;
   transform: translateX(-50%);
-  padding: 10px;
+  top: 0.625rem;
+  left: 50%;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   border-radius: 5px;
@@ -44,9 +43,11 @@ body {
   align-self: self-start;
 }
 
-#logo-alura {
-  width: 4.5rem;
-  height: 1.8rem;
+#entrada-ls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
 }
 
 #texto-entrada {
@@ -54,11 +55,11 @@ body {
   font-family: inherit;
   font-size: 1.4rem;
   color: #0a3871;
-  padding: 5px;
+  padding: 0.3125rem;
   resize: none;
-  overflow: hidden;
+  overflow: auto;
   border: none;
-  min-height: 12.625rem;
+  min-height: 15.625rem;
 }
 
 #texto-entrada:focus {
@@ -70,7 +71,6 @@ body {
   display: flex;
   align-items: center;
   color: #495057;
-  font-size: 0.875rem;
 }
 
 .material-symbols-outlined {
@@ -98,14 +98,12 @@ body {
   background-color: #0a3871;
   color: white;
   border: 1px solid #0a3871;
-  padding: 1.1875rem 0;
 }
 
 #boton-desencriptar {
   background-color: #d8dfe8;
   color: #0a3871;
   border: 1px solid #0a3871;
-  padding: 1.1875rem 0;
 }
 
 /* Estilos del lado derecho. ----------------------------------------------------------------*/
@@ -114,13 +112,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   text-align: center;
   font-size: 1.4rem;
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 1rem;
   box-shadow: 0 10px 32px -20px black;
+}
+
+#munieco {
+  display: none;
 }
 
 #subtitulo-resultado {
@@ -142,30 +143,39 @@ body {
 
 /* ESTILOS PARA CELULARES --------------------------------------------------------------------*/
 
-/* RETRATO */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 567px) {
   .container {
     flex-direction: column;
     align-items: center;
   }
 
+  .alerta-flotante {
+    padding: 0.625rem;
+  }
+
   #left-side {
-    width: 100vw;
+    width: 100%;
   }
 
   #titulo-principal {
     margin-top: 0.8125rem;
   }
 
+  #logo-alura {
+    width: 4.5rem;
+    height: 1.8rem;
+  }
+
   #texto-entrada {
     width: 97%;
     margin-top: 3.75rem;
+    font-size: 1.5rem;
   }
 
   #label-texto-entrada {
-    margin-top: 8px;
+    margin: 0.5rem 0 0 0.5rem;
     align-self: self-start;
-    margin-left: 0.5rem;
+    font-size: 0.9rem;
   }
 
   #botones-left-side {
@@ -176,6 +186,8 @@ body {
 
   .boton-style {
     width: 90%;
+    padding: 1.1875rem 0;
+    font-size: 1.2rem;
   }
 
   #boton-desencriptar {
@@ -192,27 +204,138 @@ body {
   }
 }
 
-/* PAISAJE */
-@media only screen and (min-width: 481px) and (max-width: 767px) {
-}
-
 /* ESTILOS PARA TABLETS -----------------------------------------------------------------------*/
 
-/* RETRATO */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-}
+@media only screen and (min-width: 568px) and (max-width: 1023px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-/* PAISAJE */
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .alerta-flotante {
+    padding: 1.5rem;
+    width: 40%;
+    height: auto;
+    font-size: 1.5rem;
+  }
+
+  #left-side {
+    width: 100vw;
+  }
+
+  #titulo-principal {
+    margin-top: 2rem;
+  }
+
+  #logo-alura {
+    width: 6rem;
+    height: 2.5rem;
+  }
+
+  #texto-entrada {
+    font-size: 1.6rem;
+    width: 97%;
+    margin-top: 3.75rem;
+  }
+
+  #label-texto-entrada {
+    margin: 0.5rem 0 0 0.5rem;
+    align-self: self-start;
+    font-size: 1rem;
+  }
+
+  #botones-left-side {
+    justify-content: space-evenly;
+    width: 100vw;
+  }
+
+  .boton-style {
+    width: 45%;
+    padding: 1.6rem 0;
+    font-size: 1.3rem;
+  }
+
+  #right-side {
+    width: 90%;
+    margin: 3.75rem 0 1rem 0;
+  }
+
+  #texto-resultado {
+    font-size: 1.6rem;
+  }
+
+  #boton-copiar {
+    margin-top: 2.5rem;
+  }
 }
 
 /* ESTILOS PARA COMPUTADORAS -------------------------------------------------------------------*/
 
-@media only screen and (min-width: 1201px) {
+@media only screen and (min-width: 1024px) and (max-width: 1439px){
+  .alerta-flotante {
+    padding: 1.5rem;
+    width: 40%;
+    height: auto;
+    font-size: 1.5rem;
+  }
+
   #left-side {
-    margin: 20px 0 0 50px;
+    margin: 1.25rem 0 0 3.125rem;
+    padding-right: 1rem;
     width: 65vw;
     height: 90vh;
+  }
+
+  #titulo-principal {
+    margin: 1rem 0 0 -2.5rem;
+  }
+
+  #logo-alura {
+    width: 6.8rem;
+    height: 2.8rem;
+  }
+
+  #entrada-ls {
+    width: 100%;
+    height: auto;
+  }
+
+  #texto-entrada {
+    font-size: 2rem;
+    width: 80%;
+    margin-top: 2rem;
+  }
+
+  #label-texto-entrada {
+    margin: 0.5rem 0 0 3.5rem;
+    align-self: self-start;
+    font-size: 1rem;
+    margin-top: 70px;
+  }
+
+  #botones-left-side {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .boton-style {
+    width: 45%;
+    padding: 1.6rem 0;
+    font-size: 1.5rem;
+  }
+
+  #right-side {
+    width: 90%;
+    margin: 3.75rem 0 1rem 0;
+  }
+
+  #texto-resultado {
+    font-size: 1.6rem;
+  }
+
+  #boton-copiar {
+    margin-top: 2.5rem;
+    width: 95%;
   }
 
   #right-side {
@@ -220,4 +343,15 @@ body {
     height: 90vh;
     margin: 2rem 2rem 0 0;
   }
+
+  #munieco {
+    display: inline;
+    margin-bottom: 1.5rem;
+    width: 250px;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+
 }
