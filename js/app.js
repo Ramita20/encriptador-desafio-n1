@@ -7,6 +7,7 @@ let formatearRightSideEjecutada = false;
 function formateadoRightSide() {
   if (!formatearRightSideEjecutada) {
     document.getElementById("subtitulo-resultado").style.display = "none";
+    document.getElementById("munieco").style.display = "none";
     document.getElementById("texto-resultado").style.textAlign = "start";
 
     const boton_copiar = document.createElement("button");
@@ -150,10 +151,10 @@ const placeHolder = "Ingrese el texto aquí";
 textarea.value = placeHolder;
 
 // Redimenciona verticalmente el textarea a medida que se escribe en él.
-textarea.addEventListener("input", () => {
+/*textarea.addEventListener("input", () => {
   textarea.style.height = "auto";
   textarea.style.height = `${textarea.scrollHeight}px`;
-});
+});*/
 
 // Elimina el placeholder del campo si se selecciona para escribir.
 textarea.addEventListener("focus", () => {
