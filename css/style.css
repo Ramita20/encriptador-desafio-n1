@@ -59,7 +59,6 @@ body {
   resize: none;
   overflow: auto;
   border: none;
-  min-height: 15.625rem;
 }
 
 #texto-entrada:focus {
@@ -79,7 +78,6 @@ body {
 
 #botones-left-side {
   display: flex;
-  margin-top: 1.5rem;
 }
 
 .boton-style {
@@ -111,11 +109,10 @@ body {
 #right-side {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   text-align: center;
   font-size: 1.4rem;
-  padding: 2rem;
+  padding: 1rem;
   background-color: #ffffff;
   border-radius: 1rem;
   box-shadow: 0 10px 32px -20px black;
@@ -125,14 +122,9 @@ body {
   display: none;
 }
 
-#subtitulo-resultado {
-  margin-bottom: 1rem;
-}
-
 #texto-resultado {
   width: 100%;
   word-wrap: break-word;
-  overflow: scroll;
 }
 
 #boton-copiar {
@@ -150,6 +142,8 @@ body {
   .container {
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    min-height: 140vh;
   }
 
   .alerta-flotante {
@@ -158,10 +152,8 @@ body {
 
   #left-side {
     width: 100%;
-  }
-
-  #titulo-principal {
-    margin-top: 0.8125rem;
+    height: 29rem;
+    justify-content: space-between;
   }
 
   #logo-alura {
@@ -169,14 +161,20 @@ body {
     height: 1.8rem;
   }
 
+  #entrada-ls {
+    justify-content: space-between;
+    height: 25rem;
+    min-height: 80%;
+  }
+
   #texto-entrada {
     width: 97%;
-    margin-top: 3.75rem;
+    height: 50%;
     font-size: 1.5rem;
   }
 
   #label-texto-entrada {
-    margin: 0.5rem 0 0 0.5rem;
+    margin-top: auto;
     align-self: self-start;
     font-size: 0.9rem;
   }
@@ -184,7 +182,9 @@ body {
   #botones-left-side {
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     width: 100vw;
+    height: 35%;
   }
 
   .boton-style {
@@ -193,21 +193,14 @@ body {
     font-size: 1.2rem;
   }
 
-  #boton-desencriptar {
-    margin-top: 1.25rem;
-  }
-
   #right-side {
     width: 90%;
-    margin: 3.75rem 0 1rem 0;
+    justify-content: space-evenly;
+    min-height: 15.625rem;
   }
 
   #texto-resultado {
     max-height: 25rem;
-  }
-
-  #boton-copiar {
-    margin-top: 2.5rem;
   }
 }
 
@@ -294,6 +287,10 @@ body {
     height: 90vh;
   }
 
+  #entrada-ls {
+    min-height: 80%;
+  }
+
   #titulo-principal {
     margin: 1rem 0 0 -2.5rem;
   }
@@ -311,11 +308,9 @@ body {
   #texto-entrada {
     font-size: 2rem;
     width: 80%;
-    margin-top: 2rem;
   }
 
   #label-texto-entrada {
-    margin: 0.5rem 0 0 3.5rem;
     align-self: self-start;
     font-size: 1rem;
     margin-top: 70px;

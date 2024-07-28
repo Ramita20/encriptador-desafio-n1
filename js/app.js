@@ -8,7 +8,10 @@ function formateadoRightSide() {
   if (!formatearRightSideEjecutada) {
     document.getElementById("subtitulo-resultado").style.display = "none";
     document.getElementById("munieco").style.display = "none";
-    document.getElementById("texto-resultado").style.textAlign = "start";
+    
+    let parrafo = document.getElementById("texto-resultado");
+    parrafo.style.textAlign = "start";
+    parrafo.style.overflowY = "scroll";
 
     const boton_copiar = document.createElement("button");
     boton_copiar.textContent = "Copiar";
