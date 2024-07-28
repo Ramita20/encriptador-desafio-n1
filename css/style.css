@@ -111,6 +111,7 @@ body {
 #right-side {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   font-size: 1.4rem;
@@ -130,6 +131,8 @@ body {
 
 #texto-resultado {
   width: 100%;
+  word-wrap: break-word;
+  overflow: scroll;
 }
 
 #boton-copiar {
@@ -199,6 +202,10 @@ body {
     margin: 3.75rem 0 1rem 0;
   }
 
+  #texto-resultado {
+    max-height: 25rem;
+  }
+
   #boton-copiar {
     margin-top: 2.5rem;
   }
@@ -262,6 +269,7 @@ body {
 
   #texto-resultado {
     font-size: 1.6rem;
+    max-height: 18.75rem;
   }
 
   #boton-copiar {
@@ -271,7 +279,7 @@ body {
 
 /* ESTILOS PARA COMPUTADORAS -------------------------------------------------------------------*/
 
-@media only screen and (min-width: 1024px) and (max-width: 1439px){
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
   .alerta-flotante {
     padding: 1.5rem;
     width: 40%;
@@ -331,6 +339,7 @@ body {
 
   #texto-resultado {
     font-size: 1.6rem;
+    max-height: 35.7rem;
   }
 
   #boton-copiar {
@@ -353,5 +362,4 @@ body {
 }
 
 @media only screen and (min-width: 1440px) {
-
 }
