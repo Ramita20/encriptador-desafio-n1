@@ -142,8 +142,6 @@ body {
   .container {
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    min-height: 140vh;
   }
 
   .alerta-flotante {
@@ -154,6 +152,7 @@ body {
     width: 100%;
     height: 29rem;
     justify-content: space-between;
+    margin-top: 1.5rem;
   }
 
   #logo-alura {
@@ -195,12 +194,15 @@ body {
 
   #right-side {
     width: 90%;
-    justify-content: space-evenly;
-    min-height: 15.625rem;
+    margin: 2rem 0;
   }
 
   #texto-resultado {
     max-height: 25rem;
+  }
+
+  #boton-copiar {
+    margin-top: 2rem;
   }
 }
 
@@ -220,11 +222,10 @@ body {
   }
 
   #left-side {
-    width: 100vw;
-  }
-
-  #titulo-principal {
-    margin-top: 2rem;
+    width: 100%;
+    height: 34rem;
+    justify-content: space-between;
+    margin-top: 1.5rem;
   }
 
   #logo-alura {
@@ -232,21 +233,29 @@ body {
     height: 2.5rem;
   }
 
+  #entrada-ls {
+    justify-content: space-between;
+    height: 25rem;
+    min-height: 80%;
+  }
+
   #texto-entrada {
-    font-size: 1.6rem;
     width: 97%;
-    margin-top: 3.75rem;
+    height: 50%;
+    font-size: 1.6rem;
   }
 
   #label-texto-entrada {
-    margin: 0.5rem 0 0 0.5rem;
+    margin-top: auto;
     align-self: self-start;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   #botones-left-side {
-    justify-content: space-evenly;
-    width: 100vw;
+    width: 100%;
+    height: 35%;
+    align-items: center;
+    justify-content: space-around;
   }
 
   .boton-style {
@@ -257,7 +266,7 @@ body {
 
   #right-side {
     width: 90%;
-    margin: 3.75rem 0 1rem 0;
+    margin: 2rem 0;
   }
 
   #texto-resultado {
@@ -273,6 +282,11 @@ body {
 /* ESTILOS PARA COMPUTADORAS -------------------------------------------------------------------*/
 
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  .container {
+    align-items: center;
+    height: 100vh;
+  }
+
   .alerta-flotante {
     padding: 1.5rem;
     width: 40%;
@@ -281,18 +295,14 @@ body {
   }
 
   #left-side {
-    margin: 1.25rem 0 0 3.125rem;
+    width: 65%;
+    height: 100%;
+    margin: 2rem 0 0 3.125rem;
     padding-right: 1rem;
-    width: 65vw;
-    height: 90vh;
-  }
-
-  #entrada-ls {
-    min-height: 80%;
   }
 
   #titulo-principal {
-    margin: 1rem 0 0 -2.5rem;
+    align-self: self-start;
   }
 
   #logo-alura {
@@ -302,18 +312,27 @@ body {
 
   #entrada-ls {
     width: 100%;
-    height: auto;
+    height: 90%;
+    justify-content: space-around;
+  }
+
+  #botones-left-side {
+    width: 100%;
+    height: 35%;
+    align-items: center;
+    justify-content: space-around;
   }
 
   #texto-entrada {
-    font-size: 2rem;
     width: 80%;
+    height: 50%;
+    font-size: 2rem;
   }
 
   #label-texto-entrada {
+    margin-top: auto;
     align-self: self-start;
-    font-size: 1rem;
-    margin-top: 70px;
+    font-size: 0.9rem;
   }
 
   #botones-left-side {
