@@ -116,7 +116,7 @@ img {
   align-items: center;
   text-align: center;
   font-size: 1.4rem;
-  padding: 1.5rem;
+  padding: 1.8rem;
   background-color: #ffffff;
   border-radius: 1rem;
   box-shadow: 0 10px 32px -20px black;
@@ -316,7 +316,7 @@ img {
   }
 
   #titulo-principal {
-    height: 10%;
+    height: 7%;
     align-self: self-start;
   }
 
@@ -337,9 +337,8 @@ img {
   }
 
   #label-texto-entrada {
-    margin-top: auto;
-    align-self: self-start;
-    font-size: 0.9rem;
+    margin: auto auto 0 1.1rem;
+    font-size: 1.1rem;
   }
 
   #botones-left-side {
@@ -358,22 +357,26 @@ img {
   #right-side {
     width: 35%;
     height: 90%;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   #munieco {
     display: inline;
-    margin-bottom: 1.5rem;
     width: 15.625rem;
+    margin-top: auto;
+  }
+
+  #subtitulo-resultado {
+    margin: 0.7rem 0;
   }
 
   #texto-resultado {
     font-size: 1.6rem;
     max-height: 35.7rem;
+    margin-bottom: auto;
   }
 
   #boton-copiar {
-    margin-top: 2.5rem;
     width: 95%;
   }
 }
@@ -399,7 +402,7 @@ img {
   }
 
   #titulo-principal {
-    height: 10%;
+    height: 7%;
     align-self: self-start;
   }
 
@@ -416,13 +419,12 @@ img {
   #texto-entrada {
     width: 80%;
     height: 50%;
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   #label-texto-entrada {
-    margin-top: auto;
-    align-self: self-start;
-    font-size: 0.9rem;
+    margin: auto auto 0 1.1rem;
+    font-size: 1.6rem;
   }
 
   #botones-left-side {
@@ -434,12 +436,11 @@ img {
 
   .boton-style {
     width: 45%;
-    padding: 1.6rem 0;
-    font-size: 1.5rem;
+    padding: 1.8rem 0;
+    font-size: 2.1rem;
   }
 
   #right-side {
-    font-size: 1.5rem;
     width: 35%;
     height: 90%;
     justify-content: space-between;
@@ -447,20 +448,21 @@ img {
 
   #munieco {
     display: inline;
-    width: 25rem;
+    width: 19.625rem;
+    margin-top: auto;
   }
 
-#subtitulo-resultado {
-  margin-top: auto;
-}
+  #subtitulo-resultado {
+    margin: 0.7rem 0;
+  }
 
   #texto-resultado {
-    max-height: 80%;
+    font-size: 2rem;
+    max-height: 35.7rem;
     margin-bottom: auto;
   }
 
   #boton-copiar {
     width: 95%;
-    height: 10%;
   }
 }
